@@ -16,9 +16,5 @@ func CreateRoute() *http.ServeMux {
 	index_page := components.Index()
 	mux.Handle("/", templ.Handler(index_page))
 
-	countPage := components.CounterPage()
-	mux.Handle("GET /count", templ.Handler(countPage))
-	mux.HandleFunc("POST /count", components.IncrementCounter)
-
 	return mux
 }

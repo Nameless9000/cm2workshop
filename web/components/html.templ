@@ -1,0 +1,13 @@
+package components
+
+templ makePage(head templ.Component, body templ.Component) {
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            @head
+        </head>
+        <body class="antialiased bg-slate-800">
+            @body
+        </body>
+    </html>
+}

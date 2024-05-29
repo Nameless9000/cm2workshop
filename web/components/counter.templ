@@ -1,0 +1,29 @@
+package components
+
+import "strconv"
+import "net/http"
+
+var count uint64 = 0
+
+templ counter() {
+    <div id="counter">
+        Counter: { strconv.FormatUint(count, 10) } 
+    </div>
+}
+
+templ counterBody() {
+    @counter()
+
+    <form action="/count" method="POST" hx-post="/count" hx-target="#counter" hx-swap="innerHTML">
+        <button type="submit">Count</button>
+    </form>
+}
+
+templ CounterPage() {
+    @makePage(head("Counter"), counterBody())
+}
+
+func IncrementCounter(w http.ResponseWriter, _ *http.Request) {
+    count++
+    counter().Render(context.Background(), w)
+}

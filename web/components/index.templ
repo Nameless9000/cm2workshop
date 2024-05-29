@@ -1,0 +1,14 @@
+package components
+
+templ indexBody() {
+    @header()
+    <div class="h-full bg-slate-800/25">
+        <div class="p-6 max-w-sm mx-auto bg-white rounded-xl flex items-center space-x-4">
+            <p>Hello, World!</p>
+        </div>
+    </div>
+}
+
+templ Index() {
+    @makePage(head("Home"), indexBody())
+}

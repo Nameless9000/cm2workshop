@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/nameless9000/cm2workshop/internal/server"
+	"github.com/nameless9000/cm2workshop/server"
 )
 
 func main() {
